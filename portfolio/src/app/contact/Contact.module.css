@@ -1,0 +1,72 @@
+.outerDiv {
+  background: #000;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.nextDiv {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 32px;
+  @media (width >=768px) {
+    padding-inline: 64px;
+  }
+}
+.h1 {
+  font-weight: bold;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 48px;
+}
+.innerDiv {
+  display: flex;
+  flex-direction: column;
+  @media (width >= 768px) {
+    flex-direction: row;
+    margin-inline-start: 48px;
+    margin-inline-end: 48px;
+  }
+  align-items: center;
+}
+.container {
+  flex: 1;
+}
+.h3 {
+  font-size: 30px;
+  font-weight: 700;
+  color: rgb(94, 192, 94);
+}
+.compDiv {
+  margin-bottom: 16px;
+}
+.icons {
+  display: inline-block;
+  color: rgb(89, 179, 89);
+  margin-right: 8px;
+}
+.label {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.input {
+  display: inline-block;
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: rgb(46, 46, 46);
+  border: 1px;
+  border-color: gray;
+  outline-style: none;
+}
+
+.sendButton {
+  background: #61e0b0;
+  padding-inline: 32px;
+  padding-block: 8px;
+  border-radius: 10px;
+  color: white;
+  display: inline;
+}
+:hover.sendButton {
+  scale: 1.05;
+}
