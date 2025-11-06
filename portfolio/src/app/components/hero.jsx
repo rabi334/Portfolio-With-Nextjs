@@ -1,5 +1,5 @@
 import HeroImage from "../hero-image.png";
-import Image from "next/image"
+import Image from "next/image";
 const hero = () => {
   return (
     <div className="bg-black text-white text-center py-16">
@@ -13,14 +13,18 @@ const hero = () => {
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-700 to-blue-600">
           rabi
         </span>
-        , Front-End Developer
+        , Full-Stack Developer
       </h1>
       <p className="text-gray-500 mt-4 text-lg">
         I specialize in building modern and responsive web applications.
       </p>
-          <div className="space-x-2 mt-8">
-              <button className="px-4 py-2 hover:scale-105 duration-300 bg-gradient-to-r from-green-500 to-blue-500 rounded-full">Contact With Me</button>
-              <button className="px-4 py-2 hover:scale-105 duration-300 bg-gradient-to-r from-orange-800 to-orange-200 rounded-full">Resume</button>
+      <div className="space-x-2 mt-8">
+        <button className="px-4 py-2 hover:scale-105 duration-300 bg-gradient-to-r from-green-500 to-blue-500 rounded-full">
+          Contact With Me
+        </button>
+        <button className="px-4 py-2 hover:scale-105 duration-300 bg-gradient-to-r from-orange-800 to-orange-200 rounded-full">
+          Resume
+        </button>
       </div>
     </div>
   );
