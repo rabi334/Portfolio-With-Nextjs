@@ -5,20 +5,20 @@ import AboutImage from "../hero-image.png";
 import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "../lib/apiClient";
 
-const fetchPortfolio = async () => {
-  const res = await apiClient.get("/portal-portfolios/get-projects");
-  return res.data;
-};
-const useProfile = () =>
-  useQuery({
-    queryKey: ["portfolio"],
-    queryFn: fetchPortfolio,
-  });
+// const fetchPortfolio = async () => {
+//   const res = await apiClient.get("/portal-portfolios/get-projects");
+//   return res.data;
+// };
+// const useProfile = () =>
+//   useQuery({
+//     queryKey: ["portfolio"],
+//     queryFn: fetchPortfolio,
+//   });
 export default function About() {
-  const { data, isLoading, error } = useProfile();
-  const projects = data?.data ?? [];
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>Error loading portfolio</p>;
+  // const { data, isLoading, error } = useProfile();
+  // const projects = data?.data ?? [];
+  // if (isLoading) return <p>Loading...</p>;
+  // if (error) return <p>Error loading portfolio</p>;
   const thisYear = new Date().getFullYear();
   return (
     <div
@@ -76,6 +76,7 @@ export default function About() {
                 </div>
               </div>
             </div>
+            <div> <a href="https://github.com/rabi334" target="blank" className="text-green-200 font-bold">Check My GItHub</a></div>
             <div className="mt-10 flex justify-between text-center ">
               <div>
                 <h3 className="text-green-700 font-bold text-2xl ">
@@ -85,13 +86,13 @@ export default function About() {
               </div>
               <div>
                 <h3 className="text-green-700 font-bold text-2xl ">
-                  {data.count}
+                  {5}
                 </h3>
                 <p>Projects Completed</p>
               </div>
               <div>
                 <h3 className="text-green-700 font-bold text-2xl ">
-                  {data.count}
+                  {4}
                 </h3>
                 <p>Happy Clients</p>
               </div>

@@ -75,7 +75,7 @@
 .iconsDiv {
   display: flex;
   margin-block: 1px;
-
+  gap: 4px;
   width: 15%;
   justify-content: space-around;
   @media (width>=768px) {
