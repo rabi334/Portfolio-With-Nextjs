@@ -1,8 +1,129 @@
 @import "tailwindcss";
 
-body {
-  background: #000;
+@theme {
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", "Fira Code", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
+
+@layer base {
+  :root {
+    --bg-carbon: #090c10;
+    --bg-surface: #0e121a;
+    --border-line: #1e2634;
+    --accent-green: #00ff66;
+    --accent-orange: #ff6a00;
+    --accent-cyan: #00e5ff;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+    font-family: ui-monospace, "SF Mono", "JetBrains Mono", "Fira Code", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  body {
+    background-color: #090c10;
+    color: #e6edf3;
+    font-family: ui-monospace, "SF Mono", "JetBrains Mono", "Fira Code", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    overflow-x: hidden;
+  }
+}
+
+/* Background Engineering Grid */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+/* Dense mini grid for headers and cards */
+.bg-mini-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Neo-Brutalist Buttons */
+.neo-btn-green {
+  background-color: #00ff66;
+  color: #000000;
+  font-weight: 800;
+  border: 2px solid #000000;
+  box-shadow: 4px 4px 0px #000000;
+  transition: all 0.12s ease-in-out;
+}
+.neo-btn-green:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000000;
+}
+.neo-btn-green:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000000;
+}
+
+.neo-btn-white {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 800;
+  border: 2px solid #000000;
+  box-shadow: 4px 4px 0px #000000;
+  transition: all 0.12s ease-in-out;
+}
+.neo-btn-white:hover {
+  background-color: #f0f0f0;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000000;
+}
+.neo-btn-white:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000000;
+}
+
+.neo-btn-orange {
+  background-color: transparent;
+  color: #ff6a00;
+  border: 2px solid #ff6a00;
+  font-weight: 800;
+  box-shadow: 3px 3px 0px #ff6a00;
+  transition: all 0.12s ease-in-out;
+}
+.neo-btn-orange:hover {
+  background-color: #ff6a00;
+  color: #000000;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px #000000;
+}
+
+/* Brutalist Hard Box Border */
+.brutalist-card {
+  background: #0e121a;
+  border: 2px solid #1e2634;
+  box-shadow: 4px 4px 0px #000000;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.brutalist-card:hover {
+  border-color: #00ff66;
+  box-shadow: 6px 6px 0px #000000;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #090c10;
+  border-left: 1px solid #1e2634;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e2634;
+  border: 1px solid #090c10;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00ff66;
+}
+
 .no-scroll {
   overflow: hidden;
 }

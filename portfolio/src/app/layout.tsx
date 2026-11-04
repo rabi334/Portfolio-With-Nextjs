@@ -4,12 +4,10 @@ import { Providers } from "./components/Providers";
 import Navbar from "./components/Navbars";
 import Footer from "./components/Footer";
 
-
 export const metadata: Metadata = {
-  title: "Rabira's Portfolio",
-  description: "Showcasing projects, skills, and creativity",
+  title: "Rabira Asefa // Full-Stack Software Engineer",
+  description: "Technical Neo-Brutalist portfolio showcasing high-performance web systems, scalable APIs, and full-stack engineering.",
 };
-
 
 export default function RootLayout({
   children,
@@ -17,15 +15,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        suppressHydrationWarning
+        className="font-mono bg-[#090c10] text-[#e6edf3] selection:bg-[#00ff66] selection:text-black"
+      >
         <Providers>
-          <Navbar/>
+          <Navbar />
           {children}
-          <Footer/>
+          <Footer />
         </Providers>
-        
-        </body>
+      </body>
     </html>
   );
 }

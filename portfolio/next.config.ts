@@ -4,7 +4,13 @@ const nextConfig: NextConfig = {
   output: "standalone",
 
   images: {
-    domains: ["dev-files.yenegetse.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "dev-files.yenegetse.com",
+        pathname: "/**",
+      },
+    ],
   },
   // other config options can stay here
 };
