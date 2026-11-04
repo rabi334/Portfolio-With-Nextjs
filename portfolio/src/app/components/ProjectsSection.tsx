@@ -73,7 +73,7 @@ const projects: ProjectItem[] = [
   },
   {
     id: "photobook-platform",
-    index: "05",
+    index: "03",
     title: "PHOTOBOOK_PLATFORM",
     category: "SYSTEMS", 
     technologies: [

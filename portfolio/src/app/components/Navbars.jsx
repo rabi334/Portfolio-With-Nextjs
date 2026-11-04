@@ -63,131 +63,170 @@ const Navbars = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#090c10]/95 backdrop-blur border-b-2 border-[#1e2634]">
-      {/* Top micro line / system bar */}
-      <div className="hidden sm:flex justify-between items-center px-4 py-1 text-[11px] font-mono text-gray-400 border-b border-[#1e2634]/60 bg-[#06080b]">
-        <div className="flex items-center space-x-3">
-          <span className="text-[#00ff66]">● PORT: 3000 [ESTABLISHED]</span>
-          <span>// PROTOCOL: HTTPS</span>
-          <span>// LATENCY: 24ms</span>
-        </div>
-        <div className="flex items-center space-x-4">
-          <span>HOST: RABIRA_ENGINEERING</span>
-          <span className="text-[#ff6a00]">BUILD: v2.4.0</span>
-        </div>
-      </div>
-
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        {/* Brand / Logo */}
-        <Link
-          href="#hero"
-          className="flex items-center space-x-2 text-white font-mono font-bold tracking-wider hover:text-[#00ff66] transition-colors"
-        >
-          <div className="w-8 h-8 bg-[#1e2634] border border-[#2d3748] flex items-center justify-center text-[#00ff66]">
-            <FaTerminal size={14} />
+    <>
+      <header className="sticky top-0 z-40 w-full bg-[#090c10] border-b-2 border-[#1e2634]">
+        {/* Top micro line / system bar */}
+        <div className="hidden sm:flex justify-between items-center px-4 py-1 text-[11px] font-mono text-gray-400 border-b border-[#1e2634]/60 bg-[#06080b]">
+          <div className="flex items-center space-x-3">
+            <span className="text-[#00ff66]">● PORT: 3000 [ESTABLISHED]</span>
+            <span>{"//"} PROTOCOL: HTTPS</span>
+            <span>{"//"} LATENCY: 24ms</span>
           </div>
-          <span className="text-sm sm:text-base">
-            SYSTEM:<span className="text-[#00ff66]">PORTFOLIO</span>
-          </span>
-        </Link>
-
-        {/* Desktop Navigation Links */}
-        <div className="hidden lg:flex items-center space-x-1 font-mono text-xs font-semibold">
-          {navLinks.map((link) => (
-            <Link
-              key={link.id}
-              href={link.href}
-              className={`px-3 py-1.5 transition-all uppercase tracking-wider ${
-                activeSection === link.id
-                  ? "bg-[#1e2634] text-[#00ff66] border border-[#00ff66]/40"
-                  : "text-gray-300 hover:text-white hover:bg-[#161c28]"
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
+          <div className="flex items-center space-x-4">
+            <span>HOST: RABIRA_ENGINEERING</span>
+            <span className="text-[#ff6a00]">BUILD: v2.4.0</span>
+          </div>
         </div>
 
-        {/* Right Status & Action */}
-        <div className="hidden md:flex items-center space-x-4 font-mono text-xs">
-          {/* Active Status Badge */}
-          <div className="flex items-center space-x-2 px-2.5 py-1 bg-[#0e141f] border border-[#1e2634] text-[#00ff66]">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00ff66] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00ff66]"></span>
-            </span>
-            <span className="font-bold tracking-wider text-[11px]">
-              STATUS:ACTIVE_FOR_HIRE
-            </span>
-          </div>
-
-          {/* Resume Button */}
-          <a
-            href="mailto:rabiraasefa541@gmail.com?subject=Job%20Opportunity%20/%20Resume%20Request"
-            className="neo-btn-orange px-3.5 py-1.5 text-xs flex items-center space-x-1.5"
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          {/* Brand / Logo */}
+          <Link
+            href="#hero"
+            className="flex items-center space-x-2 text-white font-mono font-bold tracking-wider hover:text-[#00ff66] transition-colors"
           >
-            <FaFileAlt size={11} />
-            <span>GET_RESUME</span>
-          </a>
-        </div>
-
-        {/* Mobile Hamburger Toggle */}
-        <div className="flex items-center space-x-2 lg:hidden">
-          <div className="flex md:hidden items-center space-x-1.5 px-2 py-0.5 bg-[#0e141f] border border-[#1e2634] text-[#00ff66] text-[10px]">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00ff66]"></span>
-            <span>ACTIVE</span>
-          </div>
-
-          <button
-            onClick={toggleMobileMenu}
-            aria-label="Toggle menu"
-            suppressHydrationWarning
-            className="p-2 border border-[#1e2634] bg-[#0e141f] text-white hover:text-[#00ff66] hover:border-[#00ff66]"
-          >
-            {isMobileMenuOpen ? <FaTimes size={18} /> : <FaBars size={18} />}
-          </button>
-        </div>
-      </nav>
-
-      {/* Mobile Terminal Drawer */}
-      {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[65px] bottom-0 bg-[#090c10]/98 border-t-2 border-[#1e2634] p-6 flex flex-col justify-between overflow-y-auto z-50">
-          <div className="space-y-3 font-mono">
-            <div className="text-xs text-gray-400 pb-2 border-b border-[#1e2634]">
-              $ // NAVIGATION_DIRECTORY
+            <div className="w-8 h-8 bg-[#1e2634] border border-[#2d3748] flex items-center justify-center text-[#00ff66]">
+              <FaTerminal size={14} />
             </div>
+            <span className="text-sm sm:text-base">
+              SYSTEM:<span className="text-[#00ff66]">PORTFOLIO</span>
+            </span>
+          </Link>
+
+          {/* Desktop Navigation Links */}
+          <div className="hidden lg:flex items-center space-x-1 font-mono text-xs font-semibold">
             {navLinks.map((link) => (
               <Link
                 key={link.id}
                 href={link.href}
-                onClick={toggleMobileMenu}
-                className={`block px-4 py-3 border text-sm font-bold tracking-wider ${
+                className={`px-3 py-1.5 transition-all uppercase tracking-wider ${
                   activeSection === link.id
-                    ? "border-[#00ff66] text-[#00ff66] bg-[#0e141f]"
-                    : "border-[#1e2634] text-gray-200 hover:border-gray-500 bg-[#0b0e14]"
+                    ? "bg-[#1e2634] text-[#00ff66] border border-[#00ff66]/40"
+                    : "text-gray-300 hover:text-white hover:bg-[#161c28]"
                 }`}
               >
-                &gt; {link.name}
+                {link.name}
               </Link>
             ))}
           </div>
 
-          <div className="pt-6 border-t border-[#1e2634] space-y-3 font-mono">
+          {/* Right Status & Action */}
+          <div className="hidden md:flex items-center space-x-4 font-mono text-xs">
+            {/* Active Status Badge */}
+            <div className="flex items-center space-x-2 px-2.5 py-1 bg-[#0e141f] border border-[#1e2634] text-[#00ff66]">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00ff66] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00ff66]"></span>
+              </span>
+              <span className="font-bold tracking-wider text-[11px]">
+                STATUS:ACTIVE_FOR_HIRE
+              </span>
+            </div>
+
+            {/* Resume Button */}
+            <a
+              href="mailto:rabiraasefa541@gmail.com?subject=Job%20Opportunity%20/%20Resume%20Request"
+              className="neo-btn-orange px-3.5 py-1.5 text-xs flex items-center space-x-1.5"
+            >
+              <FaFileAlt size={11} />
+              <span>GET_RESUME</span>
+            </a>
+          </div>
+
+          {/* Mobile Hamburger Toggle Button */}
+          <div className="flex items-center space-x-2 lg:hidden">
+            <div className="flex md:hidden items-center space-x-1.5 px-2 py-0.5 bg-[#0e141f] border border-[#1e2634] text-[#00ff66] text-[10px]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00ff66]"></span>
+              <span>ACTIVE</span>
+            </div>
+
+            <button
+              onClick={toggleMobileMenu}
+              aria-label="Open menu"
+              suppressHydrationWarning
+              className="p-2 border border-[#1e2634] bg-[#0e141f] text-white hover:text-[#00ff66] hover:border-[#00ff66]"
+            >
+              <FaBars size={18} />
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      {/* Full-Screen Mobile Terminal Drawer (Separate from sticky header) */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden fixed inset-0 z-[9999] bg-[#090c10] flex flex-col justify-between overflow-y-auto">
+          {/* Top Header of Mobile Drawer */}
+          <div>
+            <div className="h-16 px-4 border-b-2 border-[#1e2634] bg-[#090c10] flex items-center justify-between">
+              <div className="flex items-center space-x-2 text-white font-mono font-bold tracking-wider">
+                <div className="w-8 h-8 bg-[#1e2634] border border-[#2d3748] flex items-center justify-center text-[#00ff66]">
+                  <FaTerminal size={14} />
+                </div>
+                <span className="text-sm">
+                  SYSTEM:<span className="text-[#00ff66]">PORTFOLIO</span>
+                </span>
+              </div>
+
+              <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-1.5 px-2 py-0.5 bg-[#0e141f] border border-[#1e2634] text-[#00ff66] text-[10px] font-mono">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00ff66]"></span>
+                  <span>ACTIVE</span>
+                </div>
+
+                <button
+                  onClick={toggleMobileMenu}
+                  aria-label="Close menu"
+                  suppressHydrationWarning
+                  className="p-2 border border-[#00ff66] bg-[#0e141f] text-[#00ff66] hover:bg-[#00ff66] hover:text-black transition-colors"
+                >
+                  <FaTimes size={18} />
+                </button>
+              </div>
+            </div>
+
+            {/* Navigation Directory list */}
+            <div className="p-5 space-y-3 font-mono">
+              <div className="text-xs text-gray-400 pb-2 border-b border-[#1e2634] flex items-center justify-between">
+                <span>$ // NAVIGATION_DIRECTORY</span>
+                <span className="text-[#00ff66]">[5 NODES]</span>
+              </div>
+
+              {navLinks.map((link) => (
+                <Link
+                  key={link.id}
+                  href={link.href}
+                  onClick={toggleMobileMenu}
+                  className={`block px-4 py-3.5 border text-sm font-bold tracking-wider transition-all ${
+                    activeSection === link.id
+                      ? "border-[#00ff66] text-[#00ff66] bg-[#0e141f] shadow-[3px_3px_0px_#000]"
+                      : "border-[#1e2634] text-gray-200 hover:border-[#00ff66] hover:text-white bg-[#0e121a]"
+                  }`}
+                >
+                  &gt; {link.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Bottom actions & resume button */}
+          <div className="p-5 border-t-2 border-[#1e2634] bg-[#06080c] space-y-3 font-mono">
             <div className="flex items-center justify-between text-xs text-gray-400">
-              <span>● STATUS:</span>
-              <span className="text-[#00ff66] font-bold">ACTIVE_FOR_HIRE</span>
+              <span>● OPERATIONAL_STATUS:</span>
+              <span className="text-[#00ff66] font-bold">READY_FOR_HIRE</span>
             </div>
             <a
               href="mailto:rabiraasefa541@gmail.com?subject=Job%20Opportunity%20/%20Resume%20Request"
               onClick={toggleMobileMenu}
-              className="w-full neo-btn-orange text-center py-2.5 text-xs block"
+              className="w-full neo-btn-orange text-center py-3 text-xs block font-bold tracking-wider"
             >
-              [ GET_RESUME ]
+              [ GET_RESUME / CONTACT ]
             </a>
+            <div className="text-center text-[10px] text-gray-400 pt-1">
+              HOST: RABIRA_ENGINEERING // ADDIS ABABA, ET
+            </div>
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 };
 
